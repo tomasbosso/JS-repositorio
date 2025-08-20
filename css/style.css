@@ -6,23 +6,24 @@
   font-family: Arial, sans-serif;
 }
 
-
 body {
   display: flex;
   flex-wrap: wrap;
-  gap: 20px;
-  padding: 20px;
+  justify-content: center; 
+  gap: 40px; 
+  padding: 40px;
   background-color: #f4f4f4;
 }
 
 
 #productos-container {
-  flex: 2;
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
+  flex-wrap: nowrap; 
+  overflow-x: auto; 
   gap: 20px;
+  padding-bottom: 10px;
+  max-width: 100%; 
 }
-
 
 .producto {
   border: 1px solid #ddd;
@@ -34,7 +35,7 @@ body {
 }
 
 .producto:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .producto img {
@@ -66,14 +67,15 @@ body {
   background-color: #219150;
 }
 
-
 #carrito {
   flex: 1;
   min-width: 300px;
+  max-height: fit-content;
   padding: 20px;
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  align-self: flex-start;
 }
 
 #carrito h2 {
