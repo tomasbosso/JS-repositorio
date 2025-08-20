@@ -7,7 +7,6 @@ const totalGastadoEl = document.getElementById("total-gastado");
 const vaciarBtn = document.getElementById("vaciar-carrito");
 const finalizarBtn = document.getElementById("finalizar-compra");
 
-// Simular carga remota de productos
 async function cargarProductos() {
   try {
     const res = await fetch("productos.json");
@@ -18,13 +17,13 @@ async function cargarProductos() {
   }
 }
 
-// Mostrar productos
 function renderizarProductos() {
   productosContainer.innerHTML = "";
   productos.forEach(prod => {
     const div = document.createElement("div");
     div.classList.add("producto");
     div.innerHTML = `
+      <img src="${prod.imagen}" alt="${prod.nombre}">
       <h3>${prod.nombre}</h3>
       <p>Precio: $${prod.precio}</p>
       <button data-id="${prod.id}">Agregar al carrito</button>
@@ -33,7 +32,6 @@ function renderizarProductos() {
   });
 }
 
-// Agregar al carrito
 function agregarAlCarrito(idProducto) {
   const producto = productos.find(p => p.id === idProducto);
   if (producto) {
@@ -51,7 +49,6 @@ function agregarAlCarrito(idProducto) {
   }
 }
 
-// Mostrar carrito
 function renderizarCarrito() {
   carritoLista.innerHTML = "";
   let total = 0;
@@ -64,12 +61,10 @@ function renderizarCarrito() {
   totalGastadoEl.textContent = total;
 }
 
-// Guardar en localStorage
 function guardarCarrito() {
   localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Vaciar carrito
 vaciarBtn.addEventListener("click", () => {
   Swal.fire({
     title: "¿Vaciar carrito?",
@@ -88,7 +83,6 @@ vaciarBtn.addEventListener("click", () => {
   });
 });
 
-// Finalizar compra
 finalizarBtn.addEventListener("click", () => {
   if (carrito.length === 0) {
     Swal.fire("Tu carrito está vacío", "Agrega productos antes de comprar", "info");
@@ -112,7 +106,6 @@ finalizarBtn.addEventListener("click", () => {
   });
 });
 
-// Agregar al carrito al hacer click
 productosContainer.addEventListener("click", (e) => {
   if (e.target.tagName === "BUTTON") {
     const id = parseInt(e.target.dataset.id);
@@ -120,6 +113,5 @@ productosContainer.addEventListener("click", (e) => {
   }
 });
 
-// Inicialización
 cargarProductos();
 renderizarCarrito();

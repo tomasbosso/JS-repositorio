@@ -1,6 +1,26 @@
 [
-  { "id": 1, "nombre": "Paleta", "precio": 150000 },
-  { "id": 2, "nombre": "Zapatillas", "precio": 70000 },
-  { "id": 3, "nombre": "Grip", "precio": 10000 },
-  { "id": 4, "nombre": "Gorra", "precio": 15000 }
+  { 
+    "id": 1,
+    "nombre": "Paleta",
+    "precio": 150000,
+    "imagen": "img/pala.jpg"},
+
+  { "id": 2,
+    "nombre": "Zapatillas",
+    "precio": 70000,
+    "imagen": "img/zapatillas.jpg"},
+  { "id": 3,
+    "nombre": "Grip",
+    "precio": 3000,
+    "imagen": "img/grip.jpg"},
+
+  { "id": 4,
+   "nombre": "Gorra",
+    "precio": 15000,
+    "imagen": "img/gorra.jpg"},
+
+  { "id": 5,
+    "nombre": "Protector",
+    "precio": 10000,
+    "imagen": "img/protector.jpg"}
 ]
